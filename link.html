@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grab for you today before its gone!</title>
+</head>
+<body>
+    <script>
+        function populateGet() {
+          var obj = {}, params = location.search.slice(1).split('.html&');
+
+          for(var i=0,len=params.length;i<len;i++) {
+            var keyVal = params[i].split('=');
+            obj[decodeURIComponent(keyVal[0])] = decodeURIComponent(keyVal[1]);
+          }
+          return obj;
+        }
+
+        var query = populateGet();
+
+        window.location = query.link + '.html?30130&CAMPAIGN=' + query.campaign.toUpperCase() + '&shellon&btn=g&txt=b&shownone&navoff';
+    </script>
+</body>
+</html>
